@@ -1,0 +1,16 @@
+.lottery{
+    border:2px solid grey;
+    padding: 1em 0 2em 0;
+    text-align: center;
+   margin: auto;
+    border-radius: 10px;
+    width: 60em;
+    }
+    
+    .lottery-button{
+        background-color:blue;
+        color: white;
+        border-radius: 5px;
+        padding: 5px;
+    
+    }
