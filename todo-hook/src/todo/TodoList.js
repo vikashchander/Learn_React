@@ -4,22 +4,25 @@ import Paper from '@material-ui/core/Paper';
 import List from '@material-ui/core/List';
 //import AppBar from '@material-ui/core/AppBar';
 //import Toolbar from '@material-ui/core/Toolbar';
-import   ListItem from '@material-ui/core/ListItem' ; 
-
-import   ListItemText from '@material-ui/core/ListItemText' ; 
 //import  Grid from '@material-ui/core/Grid';
 import Divider from '@material-ui/core/Divider'; 
+import Todos from './Todos';
 
-
-function TodoList(props){
+function TodoList({todos, removeTodo, updateTodo,toggleTodo }){
     return (
         <Paper>
         <List>
-          {props.todos.map(t =>(
-            <>
-              <ListItem>  
-              <ListItemText>{t.task}</ListItemText>
-               </ListItem>
+          {todos.map(t =>(
+             <>
+              <Todos 
+               id={t.id}
+               todos = {t.task} 
+               key={t.id} 
+               completed = {t.completed} 
+               removeTodo={removeTodo} 
+               updateTodo = {updateTodo}
+               toggleTodo={toggleTodo}
+               />
               <Divider />
               </>
           ))

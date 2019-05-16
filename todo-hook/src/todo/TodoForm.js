@@ -12,7 +12,13 @@ function TodoForm({addTodo}){
              addTodo(value);
              reset();
            }}>
-           <TextField value={value} onChange={handleChange} />
+           <TextField 
+           value={value} 
+           onChange={handleChange} 
+           margin='normal' 
+           label='Add New Task'
+           fullWidth
+           />
            </form>
            </Paper>
     );
