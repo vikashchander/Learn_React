@@ -8,11 +8,12 @@ import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider'; 
 import Todos from './Todos';
 
-function TodoList({todos, removeTodo, updateTodo,toggleTodo }){
+function TodoList({todos, removeTodo, updateTodo, toggleTodo, editTodo }){
+    if(todos.length)
     return (
-        <Paper>
+        <Paper style={{marginTop: '1rem'}} >
         <List>
-          {todos.map(t =>(
+          {todos.map((t,i)=>(
              <>
               <Todos 
                id={t.id}
@@ -22,14 +23,16 @@ function TodoList({todos, removeTodo, updateTodo,toggleTodo }){
                removeTodo={removeTodo} 
                updateTodo = {updateTodo}
                toggleTodo={toggleTodo}
+               editTodo = {editTodo}
                />
-              <Divider />
+             {i < todos.length -1 && <Divider /> } 
               </>
           ))
         }
             </List>
             </Paper>
     );
+    return null;
 }
 
 export default TodoList;
